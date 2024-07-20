@@ -1,0 +1,938 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  --sb-track-color: #232E33;
+  --sb-thumb-color: #ffffff;
+  --sb-size: 8px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+}
+
+.edit-text {
+  --sb-track-color: #232E33;
+  --sb-thumb-color: #ff0000;
+  --sb-size: 2px;
+}
+
+.edit-text::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+.edit-text::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+
+.edit-text::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .edit-text {
+      scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .edit-text {
+      scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
+}
+
+.reviews{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2{
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    /* font-size: 26px; */
+}
+
+@media screen and (max-width: 768px) {
+  .reviews {
+    border: 2px solid greenyellow;
+    width: 100%;
+    height: 100%;
+    padding: 20px 10px;
+    display: flex;
+    align-items: center;
+    /* padding: 0px px; */
+    background: rgb(1, 27, 119);
+    background: linear-gradient(
+      90deg,
+      rgba(1, 27, 119, 1) 31%,
+      rgba(216, 41, 41, 1) 83%
+    );
+  }
+
+  form {
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    /* border: 2px solid white; */
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.218);
+    padding: 20px 20px;
+    height: auto;
+  }
+
+  form label {
+    color: white;
+    font-size: 18px;
+    width: 30%;
+    text-transform: capitalize;
+    font-weight: bold;
+    /* border: 2px solid red; */
+  }
+
+  form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: transparent;
+    font-size: 14px;
+    text-transform: capitalize;
+  }
+
+  .form-review {
+    /* border: 2px solid red; */
+    margin-bottom: 12px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .btn-submit button {
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: transparent;
+    /* width: 100%; */
+    background-color: rgba(255, 255, 255, 0.412);
+    color: white;
+    font-weight: bold;
+  }
+
+  .btn-submit button:hover {
+    background-color: rgb(0, 176, 0);
+    border: transparent;
+    color: white;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .btn-submit {
+    display: flex;
+    /* justify-content: center; */
+    margin-top: 20px;
+    /* width: 100%; */
+  }
+
+  .popup-result{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+  }
+  
+  .add-btn, .edit-btn{
+    border: transparent;
+    background-color: rgba(255, 255, 255, 0.412);
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .add-btn:hover{
+    background-color: rgb(0, 125, 203);
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .edit-text{
+    color: rgb(1, 1, 1);
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    text-transform: capitalize;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.412);
+  }
+
+  .edit-btn:hover{
+    background-color: rgb(255, 66, 66);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .amenities{
+    margin-top: 20px;
+  }
+
+  .amenities h4{
+    color: white;
+    font-size: 22px;
+    margin-bottom: 10px; 
+  }
+
+  .amenity{
+    /* border: 2px solid white; */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: ; */
+    /* align-items: center; */
+  }
+
+  .each-amenity{
+    display: flex;
+    justify-content: left;
+  }
+
+  .add-new-opinion{
+    margin-top: 5px;
+  }
+
+  .overall-rating p{
+    font-size: 20px;
+  }
+
+  .overall-rating textarea{
+      width: 50%;
+  }
+
+  .complete-rating{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .complete-rating p{
+    margin-right: 20px;
+    color: white;
+    text-transform: capitalize;
+  }
+
+  .popup{
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    top: 0;
+    bottom: 0;
+    margin-left: auto; 
+    margin-right: auto; 
+    width: auto;
+    height: 110vh;
+    background-color: rgba(49, 49, 49, 0.941);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .popup-modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid red; */
+    padding: 50px 20px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+  }
+
+  .close-icon{
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    cursor: pointer;
+    font-size: 30px;
+    /* border: 2px solid red; */
+    height: 80vh;
+    font-weight: bold;
+  }
+
+  .popup-modal label, textarea, button{
+    color: black !important;
+  }
+
+  .popup .popup-modal label{
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .popup .popup-modal textarea{
+    resize: none;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    width: 80vw;
+    margin-bottom: 20px;
+  }
+
+  .popup textarea:focus{
+    outline: none;
+  }
+
+  .popup .popup-modal button{
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    border: transparent;
+    background-color: black;
+    color: white !important;
+    font-size: 20px;
+  }
+
+  .popup .popup-modal button:hover{
+      background-color: rgba(0, 0, 0, 0.404);
+      color: black !important;
+      /* border: 2px solid black !important; */
+      transition: all 0.3s ease-in;
+  }
+
+  .overlay{
+    background-color: rgba(49, 49, 49, 0.8);
+  }
+}
+
+/* tablet viewport */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .reviews {
+    /* border: 2px solid greenyellow; */
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    padding: 40px 40px;
+    background: rgb(1, 27, 119);
+    background: linear-gradient(
+      90deg,
+      rgba(1, 27, 119, 1) 31%,
+      rgba(216, 41, 41, 1) 83%
+    );
+  }
+
+  form {
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 2px solid white;
+    width: 100%;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.218);
+    padding: 20px 20px;
+    height: auto;
+  }
+
+  form label {
+    color: white;
+    font-size: 22px;
+    text-transform: capitalize;
+    font-weight: bold;
+    /* border: 2px solid red; */
+    width: 40%;
+  }
+
+  form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: transparent;
+    font-size: 16px;
+    text-transform: capitalize;
+  }
+
+  .form-review {
+    /* border: 2px solid red; */
+    margin-bottom: 12px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  form button {
+    padding: 15px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: transparent;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.412);
+    color: white;
+    font-weight: bold;
+  }
+
+  form button:hover {
+    background-color: rgba(255, 255, 255, 0.481);
+    color: white;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .btn-submit {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .btn-submit button {
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: transparent;
+    /* width: 100%; */
+    background-color: rgba(255, 255, 255, 0.412);
+    color: white !important;
+    font-weight: bold;
+  }
+
+  .btn-submit button:hover {
+    background-color: rgb(0, 176, 0);
+    border: transparent;
+    color: white;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .btn-submit {
+    display: flex;
+    /* justify-content: center; */
+    margin-top: 20px;
+    /* width: 100%; */
+  }
+
+  .popup-result{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+  }
+  
+  .add-btn, .edit-btn{
+    border: transparent;
+    background-color: rgba(255, 255, 255, 0.412);
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    width: 30%;
+  }
+
+  .add-btn:hover{
+    background-color: rgb(0, 125, 203);
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .edit-text{
+    color: rgb(1, 1, 1);
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    text-transform: capitalize;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.412);
+    width: 50%;
+    overflow-x: scroll;
+  }
+
+  .edit-btn:hover{
+    background-color: rgb(255, 66, 66);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .amenities{
+    margin-top: 20px;
+  }
+
+  .amenities h4{
+    color: white;
+    font-size: 22px;
+    margin-bottom: 10px; 
+  }
+
+  .amenity{
+    /* border: 2px solid white; */
+    /* padding: 10px; */
+    padding-bottom: 10px;
+    /* justify-content: ; */
+    /* align-items: center; */
+  }
+
+  .each-amenity{
+    display: flex;
+    justify-content: left;
+    /* border: 2px solid red; */
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .add-new-opinion{
+    margin-top: 5px;
+  }
+
+  .overall-rating p{
+    font-size: 20px;
+  }
+
+  .overall-rating textarea{
+      width: 50%;
+  }
+
+  .complete-rating{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .complete-rating p{
+    margin-right: 20px;
+    color: white;
+    text-transform: capitalize;
+  }
+
+  .popup{
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    top: 0;
+    bottom: 0;
+    margin-left: auto; 
+    margin-right: auto; 
+    width: auto;
+    height: 110vh;
+    background-color: rgba(49, 49, 49, 0.941);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .popup-modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    /* border: 2px solid red; */
+    padding: 50px 20px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+  }
+
+  .close-icon{
+    position: absolute;
+    /* top: 280px; */
+    top: 35%;
+    right: 26%;
+    /* position: absolute;
+    top: 10px;
+    right: 160px; */
+    cursor: pointer;
+    font-size: 30px;
+    /* border: 2px solid red; */
+    /* height: 80vh; */
+    font-weight: bold;
+  }
+
+  .popup-modal label, textarea, button{
+    color: black !important;
+  }
+
+  .popup .popup-modal label{
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .popup .popup-modal textarea{
+    resize: none;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    width: 100%;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+  }
+
+  .popup textarea:focus{
+    outline: none;
+  }
+
+  .popup .popup-modal button{
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    border: transparent;
+    background-color: black;
+    color: white !important;
+    font-size: 20px;
+  }
+
+  .popup .popup-modal button:hover{
+      background-color: rgba(0, 0, 0, 0.404);
+      color: black !important;
+      /* border: 2px solid black !important; */
+      transition: all 0.3s ease-in;
+  }
+
+  .overlay{
+    background-color: rgba(49, 49, 49, 0.8);
+  }
+}
+
+/* desktop viewport */
+@media screen and (min-width: 1024px) {
+  .reviews {
+    /* border: 2px solid black; */
+    width: 100%;
+    height: auto;
+    padding: 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 0px 40px; */
+    background: rgb(1, 27, 119);
+    background: linear-gradient(
+      90deg,
+      rgba(1, 27, 119, 1) 31%,
+      rgba(216, 41, 41, 1) 83%
+    );
+  }
+
+  form {
+    border: 2px solid white;
+    width: 60%;
+    height: auto;
+    padding: 30px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.218);
+    height: auto;
+  }
+
+  form label {
+    color: white;
+    font-size: 22px;
+    text-transform: capitalize;
+    font-weight: bold;
+    /* border: 2px solid red; */
+    width: 40%;
+  }
+
+  form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: transparent;
+    font-size: 16px;
+    text-transform: capitalize;
+    resize: none;
+  }
+
+  .form-review {
+    /* border: 2px solid red; */
+    margin-bottom: 12px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  form button {
+    padding: 15px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: transparent;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.412);
+    color: white;
+    font-weight: bold;
+  }
+
+  form button:hover {
+    background-color: rgba(255, 255, 255, 0.481);
+    color: white;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .btn-submit {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 20%;
+  }
+
+  /* show reviews */
+  .show-reviews{
+    border: 2px solid red;
+    margin-top: 10px;
+    padding: 10px;
+    width: 60%;
+    height: auto;
+  }
+
+  .reviews-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: white;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 22px;
+  }
+
+  .btn-submit button {
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: transparent;
+    /* width: 100%; */
+    background-color: rgba(255, 255, 255, 0.412);
+    color: white !important;
+    font-weight: bold;
+  }
+
+  .btn-submit button:hover {
+    background-color: rgb(0, 176, 0);
+    border: transparent;
+    color: white;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .btn-submit {
+    display: flex;
+    /* justify-content: center; */
+    margin-top: 20px;
+    /* width: 100%; */
+  }
+
+  .popup-result{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+  }
+  
+  .add-btn, .edit-btn{
+    border: transparent;
+    background-color: rgba(255, 255, 255, 0.412);
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    width: 30%;
+  }
+
+  .add-btn:hover{
+    background-color: rgb(0, 125, 203);
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .edit-text{
+    color: rgb(1, 1, 1);
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    text-transform: capitalize;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.412);
+    width: 50%;
+    overflow-x: scroll;
+  }
+
+  .edit-btn:hover{
+    background-color: rgb(255, 66, 66);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .amenities{
+    margin-top: 20px;
+  }
+
+  .amenities h4{
+    color: white;
+    font-size: 22px;
+    margin-bottom: 10px; 
+  }
+
+  .amenity{
+    /* border: 2px solid white; */
+    /* padding: 10px; */
+    padding-bottom: 10px;
+    /* justify-content: ; */
+    /* align-items: center; */
+  }
+
+  .each-amenity{
+    display: flex;
+    justify-content: left;
+    /* border: 2px solid red; */
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .add-new-opinion{
+    margin-top: 5px;
+  }
+
+  .overall-rating p{
+    font-size: 20px;
+  }
+
+  .overall-rating textarea{
+      width: 50%;
+  }
+
+  .complete-rating{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .complete-rating p{
+    margin-right: 20px;
+    color: white;
+    text-transform: capitalize;
+  }
+
+  .popup{
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    top: 0;
+    bottom: 0;
+    margin-left: auto; 
+    margin-right: auto; 
+    width: auto;
+    height: 110vh;
+    background-color: rgba(49, 49, 49, 0.941);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .popup-modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    /* border: 2px solid red; */
+    padding: 50px 20px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+  }
+
+  .close-icon{
+    position: absolute;
+    /* top: 280px; */
+    top: 35%;
+    right: 26%;
+    /* position: absolute;
+    top: 10px;
+    right: 160px; */
+    cursor: pointer;
+    font-size: 30px;
+    /* border: 2px solid red; */
+    /* height: 80vh; */
+    font-weight: bold;
+  }
+
+  .popup-modal label, textarea, button{
+    color: black !important;
+  }
+
+  .popup .popup-modal label{
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .popup .popup-modal textarea{
+    resize: none;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    width: 100%;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+  }
+
+  .popup textarea:focus{
+    outline: none;
+  }
+
+  .popup .popup-modal button{
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    border: transparent;
+    background-color: black;
+    color: white !important;
+    font-size: 20px;
+  }
+
+  .popup .popup-modal button:hover{
+      background-color: rgba(0, 0, 0, 0.404);
+      color: black !important;
+      /* border: 2px solid black !important; */
+      transition: all 0.3s ease-in;
+  }
+
+  .overlay{
+    background-color: rgba(49, 49, 49, 0.8);
+  }
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.star {
+  cursor: pointer;
+}
