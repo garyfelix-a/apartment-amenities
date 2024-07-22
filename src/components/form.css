@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* *{
+  background-color: white;
+} */
+
 body {
   --sb-track-color: #232E33;
   --sb-thumb-color: #ffffff;
@@ -56,6 +60,33 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
+.form-left {
+  --sb-track-color: #c0c0c0;
+  --sb-thumb-color: #000000;
+  --sb-size: 7px;
+}
+
+.form-left::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+.form-left::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 1px;
+}
+
+.form-left::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .form-left {
+      scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
+}
+
 .reviews{
     display: flex;
     flex-direction: column;
@@ -70,6 +101,7 @@ h2{
     /* font-size: 26px; */
 }
 
+/* mobile viewport */
 @media screen and (max-width: 768px) {
   .reviews {
     border: 2px solid greenyellow;
@@ -110,7 +142,7 @@ h2{
   form textarea {
     padding: 10px;
     border-radius: 5px;
-    border: transparent;
+    /* border: transparent; */
     font-size: 14px;
     text-transform: capitalize;
   }
@@ -129,7 +161,7 @@ h2{
     font-size: 20px;
     cursor: pointer;
     border-radius: 5px;
-    border: transparent;
+    /* border: transparent; */
     /* width: 100%; */
     background-color: rgba(255, 255, 255, 0.412);
     color: white;
@@ -138,7 +170,7 @@ h2{
 
   .btn-submit button:hover {
     background-color: rgb(0, 176, 0);
-    border: transparent;
+    /* border: transparent; */
     color: white;
     transition: all 0.2s ease-in-out;
   }
@@ -157,7 +189,7 @@ h2{
   }
   
   .add-btn, .edit-btn{
-    border: transparent;
+    /* border: transparent; */
     background-color: rgba(255, 255, 255, 0.412);
     color: white;
     font-weight: bold;
@@ -306,7 +338,7 @@ h2{
     width: 100%;
     border-radius: 10px;
     cursor: pointer;
-    border: transparent;
+    /* border: transparent; */
     background-color: black;
     color: white !important;
     font-size: 20px;
@@ -364,7 +396,7 @@ h2{
   form textarea {
     padding: 10px;
     border-radius: 5px;
-    border: transparent;
+    /* border: transparent; */
     font-size: 16px;
     text-transform: capitalize;
   }
@@ -383,7 +415,7 @@ h2{
     font-size: 20px;
     cursor: pointer;
     border-radius: 10px;
-    border: transparent;
+    /* border: transparent; */
     width: 100%;
     background-color: rgba(255, 255, 255, 0.412);
     color: white;
@@ -408,7 +440,7 @@ h2{
     font-size: 20px;
     cursor: pointer;
     border-radius: 5px;
-    border: transparent;
+    /* border: transparent; */
     /* width: 100%; */
     background-color: rgba(255, 255, 255, 0.412);
     color: white !important;
@@ -620,26 +652,24 @@ h2{
     /* border: 2px solid black; */
     width: 100%;
     height: auto;
-    padding: 20px 0px;
+    padding: 0px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
     /* padding: 0px 40px; */
-    background: rgb(1, 27, 119);
+    /* background: rgb(1, 27, 119);
     background: linear-gradient(
       90deg,
       rgba(1, 27, 119, 1) 31%,
       rgba(216, 41, 41, 1) 83%
-    );
+    ); */
   }
 
   form {
     border: 2px solid white;
-    width: 60%;
+    width: 80%;
     height: auto;
     padding: 30px;
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
     background-color: rgba(255, 255, 255, 0.218);
     height: auto;
   }
@@ -656,7 +686,7 @@ h2{
   form textarea {
     padding: 10px;
     border-radius: 5px;
-    border: transparent;
+    /* border: transparent; */
     font-size: 16px;
     text-transform: capitalize;
     resize: none;
@@ -676,7 +706,7 @@ h2{
     font-size: 20px;
     cursor: pointer;
     border-radius: 10px;
-    border: transparent;
+    /* border: transparent; */
     width: 100%;
     background-color: rgba(255, 255, 255, 0.412);
     color: white;
@@ -723,17 +753,12 @@ h2{
     font-size: 20px;
     cursor: pointer;
     border-radius: 5px;
-    border: transparent;
-    /* width: 100%; */
-    background-color: rgba(255, 255, 255, 0.412);
     color: white !important;
-    font-weight: bold;
+    background-color: rgb(0, 176, 0);
   }
 
   .btn-submit button:hover {
-    background-color: rgb(0, 176, 0);
-    border: transparent;
-    color: white;
+    background-color: rgb(74, 163, 74);
     transition: all 0.2s ease-in-out;
   }
 
@@ -744,6 +769,16 @@ h2{
     /* width: 100%; */
   }
 
+  .overall-rating-input{
+    display: flex;
+  }
+
+  .overall-rating-input input{
+    margin-right: 20px;
+    text-transform: capitalize;
+    padding-left: 5px;
+  }
+
   .popup-result{
     display: flex;
     /* justify-content: center; */
@@ -751,9 +786,9 @@ h2{
   }
   
   .add-btn, .edit-btn{
-    border: transparent;
-    background-color: rgba(255, 255, 255, 0.412);
-    color: white;
+    /* border: transparent; */
+    background-color: black;
+    color: white !important;
     font-weight: bold;
     border-radius: 5px;
     padding: 10px;
@@ -762,8 +797,8 @@ h2{
   }
 
   .add-btn:hover{
-    background-color: rgb(0, 125, 203);
-    color: white;
+    background-color: white;
+    color: black !important;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
   }
@@ -788,16 +823,18 @@ h2{
 
   .amenities{
     margin-top: 20px;
+    /* border: 2px solid red; */
+    /* width: 40%; */
   }
 
   .amenities h4{
-    color: white;
     font-size: 22px;
     margin-bottom: 10px; 
   }
 
   .amenity{
-    /* border: 2px solid white; */
+    /* border: 2px solid black; */
+    width: 100%;
     /* padding: 10px; */
     padding-bottom: 10px;
     /* justify-content: ; */
@@ -820,10 +857,6 @@ h2{
     font-size: 20px;
   }
 
-  .overall-rating textarea{
-      width: 50%;
-  }
-
   .complete-rating{
     display: flex;
     align-items: center;
@@ -832,7 +865,6 @@ h2{
 
   .complete-rating p{
     margin-right: 20px;
-    color: white;
     text-transform: capitalize;
   }
 
@@ -888,7 +920,6 @@ h2{
   .popup .popup-modal label{
     color: white;
     font-size: 22px;
-    font-weight: bold;
     margin-bottom: 10px;
   }
 
@@ -898,6 +929,7 @@ h2{
     font-size: 18px;
     border-radius: 10px;
     width: 100%;
+    border: 2px solid black;
     text-transform: capitalize;
     margin-bottom: 20px;
   }
@@ -911,7 +943,7 @@ h2{
     width: 100%;
     border-radius: 10px;
     cursor: pointer;
-    border: transparent;
+    /* border: transparent; */
     background-color: black;
     color: white !important;
     font-size: 20px;
