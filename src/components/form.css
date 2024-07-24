@@ -102,7 +102,7 @@ h2{
 }
 
 /* mobile viewport */
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .reviews {
     border: 2px solid greenyellow;
     width: 100%;
@@ -110,19 +110,11 @@ h2{
     padding: 20px 10px;
     display: flex;
     align-items: center;
-    /* padding: 0px px; */
-    background: rgb(1, 27, 119);
-    background: linear-gradient(
-      90deg,
-      rgba(1, 27, 119, 1) 31%,
-      rgba(216, 41, 41, 1) 83%
-    );
   }
 
   form {
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    /* border: 2px solid white; */
     width: 100%;
     height: 100vh;
     background-color: rgba(255, 255, 255, 0.218);
@@ -131,24 +123,21 @@ h2{
   }
 
   form label {
-    color: white;
+    color: gray;
     font-size: 18px;
     width: 30%;
     text-transform: capitalize;
     font-weight: bold;
-    /* border: 2px solid red; */
   }
 
   form textarea {
     padding: 10px;
     border-radius: 5px;
-    /* border: transparent; */
     font-size: 14px;
     text-transform: capitalize;
   }
 
   .form-review {
-    /* border: 2px solid red; */
     margin-bottom: 12px;
     display: flex;
     width: 100%;
@@ -161,8 +150,6 @@ h2{
     font-size: 20px;
     cursor: pointer;
     border-radius: 5px;
-    /* border: transparent; */
-    /* width: 100%; */
     background-color: rgba(255, 255, 255, 0.412);
     color: white;
     font-weight: bold;
@@ -170,26 +157,21 @@ h2{
 
   .btn-submit button:hover {
     background-color: rgb(0, 176, 0);
-    /* border: transparent; */
     color: white;
     transition: all 0.2s ease-in-out;
   }
 
   .btn-submit {
     display: flex;
-    /* justify-content: center; */
     margin-top: 20px;
-    /* width: 100%; */
   }
 
   .popup-result{
     display: flex;
-    /* justify-content: center; */
     align-items: center;
   }
   
   .add-btn, .edit-btn{
-    /* border: transparent; */
     background-color: rgba(255, 255, 255, 0.412);
     color: white;
     font-weight: bold;
@@ -232,12 +214,9 @@ h2{
   }
 
   .amenity{
-    /* border: 2px solid white; */
     padding: 10px;
     display: flex;
     flex-direction: column;
-    /* justify-content: ; */
-    /* align-items: center; */
   }
 
   .each-amenity{
@@ -291,7 +270,6 @@ h2{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* border: 2px solid red; */
     padding: 50px 20px;
     border-radius: 10px;
     background-color: white;
@@ -304,7 +282,6 @@ h2{
     right: 50px;
     cursor: pointer;
     font-size: 30px;
-    /* border: 2px solid red; */
     height: 80vh;
     font-weight: bold;
   }
@@ -338,7 +315,6 @@ h2{
     width: 100%;
     border-radius: 10px;
     cursor: pointer;
-    /* border: transparent; */
     background-color: black;
     color: white !important;
     font-size: 20px;
@@ -347,30 +323,22 @@ h2{
   .popup .popup-modal button:hover{
       background-color: rgba(0, 0, 0, 0.404);
       color: black !important;
-      /* border: 2px solid black !important; */
       transition: all 0.3s ease-in;
   }
 
   .overlay{
     background-color: rgba(49, 49, 49, 0.8);
   }
-}
+} */
 
 /* tablet viewport */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+/* @media screen and (min-width: 768px) and (max-width: 1023px) {
   .reviews {
-    /* border: 2px solid greenyellow; */
     width: 100%;
     height: auto;
     display: flex;
     align-items: center;
     padding: 40px 40px;
-    background: rgb(1, 27, 119);
-    background: linear-gradient(
-      90deg,
-      rgba(1, 27, 119, 1) 31%,
-      rgba(216, 41, 41, 1) 83%
-    );
   }
 
   form {
@@ -389,20 +357,17 @@ h2{
     font-size: 22px;
     text-transform: capitalize;
     font-weight: bold;
-    /* border: 2px solid red; */
     width: 40%;
   }
 
   form textarea {
     padding: 10px;
     border-radius: 5px;
-    /* border: transparent; */
     font-size: 16px;
     text-transform: capitalize;
   }
 
   .form-review {
-    /* border: 2px solid red; */
     margin-bottom: 12px;
     display: flex;
     width: 100%;
@@ -415,7 +380,6 @@ h2{
     font-size: 20px;
     cursor: pointer;
     border-radius: 10px;
-    /* border: transparent; */
     width: 100%;
     background-color: rgba(255, 255, 255, 0.412);
     color: white;
@@ -440,8 +404,6 @@ h2{
     font-size: 20px;
     cursor: pointer;
     border-radius: 5px;
-    /* border: transparent; */
-    /* width: 100%; */
     background-color: rgba(255, 255, 255, 0.412);
     color: white !important;
     font-weight: bold;
@@ -456,14 +418,11 @@ h2{
 
   .btn-submit {
     display: flex;
-    /* justify-content: center; */
     margin-top: 20px;
-    /* width: 100%; */
   }
 
   .popup-result{
     display: flex;
-    /* justify-content: center; */
     align-items: center;
   }
   
@@ -514,17 +473,12 @@ h2{
   }
 
   .amenity{
-    /* border: 2px solid white; */
-    /* padding: 10px; */
     padding-bottom: 10px;
-    /* justify-content: ; */
-    /* align-items: center; */
   }
 
   .each-amenity{
     display: flex;
     justify-content: left;
-    /* border: 2px solid red; */
     align-items: center;
     margin-bottom: 10px;
   }
@@ -576,7 +530,6 @@ h2{
     justify-content: center;
     align-items: center;
     width: 50%;
-    /* border: 2px solid red; */
     padding: 50px 20px;
     border-radius: 10px;
     background-color: white;
@@ -585,16 +538,10 @@ h2{
 
   .close-icon{
     position: absolute;
-    /* top: 280px; */
     top: 35%;
     right: 26%;
-    /* position: absolute;
-    top: 10px;
-    right: 160px; */
     cursor: pointer;
     font-size: 30px;
-    /* border: 2px solid red; */
-    /* height: 80vh; */
     font-weight: bold;
   }
 
@@ -637,14 +584,13 @@ h2{
   .popup .popup-modal button:hover{
       background-color: rgba(0, 0, 0, 0.404);
       color: black !important;
-      /* border: 2px solid black !important; */
       transition: all 0.3s ease-in;
   }
 
   .overlay{
     background-color: rgba(49, 49, 49, 0.8);
   }
-}
+} */
 
 /* desktop viewport */
 @media screen and (min-width: 1024px) {
@@ -952,7 +898,6 @@ h2{
   .popup .popup-modal button:hover{
       background-color: rgba(0, 0, 0, 0.404);
       color: black !important;
-      /* border: 2px solid black !important; */
       transition: all 0.3s ease-in;
   }
 

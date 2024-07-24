@@ -27,10 +27,12 @@ const StarRating = ({ rating, setRating, hover, setHover }) => (
           <FaStar
             className="star"
             size={18}
-            color={currentRating === 1 || (currentRating <= (hover || rating) && currentRating > 1)
-              ? "black"
-              : "#c0c0c0"
-          }
+            color={
+              currentRating === 1 ||
+              (currentRating <= (hover || rating) && currentRating > 1)
+                ? "black"
+                : "#c0c0c0"
+            }
             onMouseEnter={() => setHover(currentRating)}
             onMouseLeave={() => setHover(null)}
           />
@@ -126,15 +128,15 @@ const Form = () => {
       </h2>
       <form
         onSubmit={handleSubmit}
-        className="flex border-2 border-black max-h-[85vh]"
+        className="flex border-2 border-black max-h-[85vh] max-lg:w-[90vw] max-lg:p-4"
       >
-        <div className="form-left w-[50%] overflow-y-scroll pr-4">
+        <div className="form-left w-[50%] overflow-y-scroll pr-4 max-lg:w-full max-xl:w-full pb-2">
           <div className="overall-rating">
             <h2 className="text-[#8c0000] text-2xl font-montserrat capitalize">
               Express your ratings
             </h2>
             <div className="complete-rating">
-              <p className="font-oswald text-[gray]">
+              <p className="font-oswald text-[gray] capitalize mb-2">
                 give your overall rating
               </p>
               <StarRating
@@ -144,7 +146,7 @@ const Form = () => {
                 setHover={setOverallHover}
               />
             </div>
-            <div className="overall-rating-input flex-col">
+            <div className="overall-rating-input mt-3 flex-col">
               <input
                 type="text"
                 placeholder="Enter your name"
@@ -153,7 +155,7 @@ const Form = () => {
                 className="w-full font-palanquin border-2 border-black mb-2 rounded-[5px] p-2"
               />
               <textarea
-                className="overall-rating-text border-2 border-black pb-6 "
+                className="overall-rating-text border-2 border-black pl-2 pt-2 pb-4 rounded-[5px] max-lg:w-full"
                 placeholder="Please Share Your Experience"
                 value={overallRating}
                 onChange={(e) => setOverallRating(e.target.value)}
@@ -167,12 +169,16 @@ const Form = () => {
             onChange={(e) => setOverallRating(e.target.value)}
           /> */}
           </div>
-          <div className="amenities">
-            <h4 className="text-[#8c0000] font-montserrat">Amenities: </h4>
+
+          {/* amenities ratings area */}
+          <div className="amenities max-lg:w-full">
+            <h4 className="text-[#8c0000] font-montserrat text-[22px]">
+              Amenities:{" "}
+            </h4>
             {amenities.map((amenity) => (
-              <div key={amenity} className="amenity w-[100%]">
-                <div className="each-amenity">
-                  <label className="font-teko font-extralight text-[gray]">
+              <div key={amenity} className="amenity w-full mb-4">
+                <div className="each-amenity flex justify-between items-center mb-2">
+                  <label className="font-teko font-extralight text-[gray] max-lg:text-[18px]">
                     {amenity} :
                   </label>
                   <StarRating
@@ -189,12 +195,14 @@ const Form = () => {
                 <div className="add-new-opinion">
                   {opinions[amenity] ? (
                     <>
-                      <div className="popup-result">
-                        <span className="edit-text">{opinions[amenity]}</span>
+                      <div className="popup-result flex items-center justify-between">
+                        <span className="edit-text border-2 p-3 mr-2 rounded-[5px] text-[18px] capitalize overflow-x-scroll max-lg:w-[80%] max-lg:max-h-[100px]">
+                          {opinions[amenity]}
+                        </span>
                         <button
                           type="button"
                           onClick={() => handleEditOpinion(amenity)}
-                          className="edit-btn"
+                          className="edit-btn border-2 border-[gray] font-palanquin font-extralight hover:text-black max-lg:text-[18px] p-2 rounded-[7px] text-[#219419] hover:bg-[#dcffdc]"
                         >
                           Edit Opinion
                         </button>
@@ -204,7 +212,7 @@ const Form = () => {
                     <button
                       type="button"
                       onClick={() => handleAddOpinion(amenity)}
-                      className="add-btn border-2 border-black font-palanquin font-extralight hover:text-[white]"
+                      className="add-btn border-2 border-[gray] font-palanquin font-extralight hover:text-black max-lg:text-[20px] p-2 rounded-[7px] text-[#219419] hover:bg-[#dcffdc]"
                     >
                       Add Opinion
                     </button>
@@ -216,32 +224,35 @@ const Form = () => {
           <div className="btn-submit">
             <button
               type="submit"
-              className="text-white font-montserrat font-extralight"
+              className="text-white font-montserrat font-extralight px-8 py-2 rounded-[7px] text-[20px] bg-black hover:bg-white hover:text-black border-2 border-black hover:transition-all"
             >
               Submit
             </button>
           </div>
         </div>
-        <div className="form-right ml-10 flex items-center justify-center">
-            <img src={ReviewImage} alt="" draggable="false" />
+        <div className="form-right max-sm:border-2 max-lg:hidden ml-10 flex items-center justify-center">
+          <img src={ReviewImage} alt="form-image" draggable="false" />
         </div>
       </form>
       {showPopup && (
-        <div className="popup">
-          <div className="popup-modal">
-            <IoIosCloseCircleOutline
-              className="close-icon"
-              onClick={() => setShowPopup(false)}
-            />
-            <label>{currentAmenity}</label>
-            <textarea
-              value={newOpinion}
-              onChange={(e) => setNewOpinion(e.target.value)}
-              placeholder="Enter your opinion..."
-            />
-            <button type="button" onClick={handleSaveOpinion}>
-              {isEditable ? "Update" : "Add"}
-            </button>
+        <div className="popup border-2 flex justify-center items-center flex-col absolute bg-[#8080809d] w-full h-full top-0 left-0 bottom-0 ml-auto mr-auto max-lg:px-2">
+          <div className="popup-modal flex justify-center items-center border-2 px-2 py-10 bg-white max-lg:h-[50vh] max-lg:w-full max-lg:mx-2 rounded-[]">
+            <div className="max-lg:w-full max-lg:flex-col justify-between items-center max-lg:p-10 ">
+              <IoIosCloseCircleOutline
+                className="close-icon max-lg:absolute max-lg:top-[10px] max-lg:right-[20px] max-lg:h-[55vh] text-[30px] cursor-pointer"
+                onClick={() => setShowPopup(false)}
+              />
+              <label className="text-[24px]">{currentAmenity}:</label>
+              <textarea
+                value={newOpinion}
+                onChange={(e) => setNewOpinion(e.target.value)}
+                placeholder="Enter your opinion..."
+                className="border-2 border-black mt-2 px-2 py-4 mr-2 rounded-[10px] w-full capitalize"
+              />
+              <button type="button" onClick={handleSaveOpinion} className="border-2 border-black text-[18px] py-2 px-6 mt-2 rounded-[5px] hover:bg-[#94ff94]">
+                {isEditable ? "Update" : "Add"}
+              </button>
+            </div>
           </div>
         </div>
       )}
